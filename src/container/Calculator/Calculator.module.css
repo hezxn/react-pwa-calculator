@@ -1,0 +1,38 @@
+.twospace {
+  grid-column: span 2;
+}
+
+.operate {
+  background: #a7acc0 !important;
+}
+
+.other {
+  background: #d5d7e1 !important;
+}
+
+.equal {
+  background: #b2b7c8 !important;
+}
+
+.size {
+  overflow: hidden !important;
+}
+
+@media (min-width: 480px) {
+  .size {
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .size {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover;
+    position: absolute;
+    grid-template-columns: repeat(4, auto) !important;
+    grid-template-rows: autofit, minmax(120px, auto) repeat(5, 100px) !important;
+    overflow: hidden !important;
+  }
+}

@@ -1,0 +1,23 @@
+.display {
+  grid-column: 1 / -1;
+  background-color: #d5d7e1 !important;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.display .abovetext {
+  color: #4d4d4d(196, 23, 202, 0.897);
+  font-size: 1.8rem;
+  font-family: Trebuchet MS !important;
+}
+
+.display .belowtext {
+  color: #000000;
+  font-size: 2.8rem;
+  font-family: Trebuchet MS !important;
+}
