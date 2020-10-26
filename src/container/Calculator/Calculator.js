@@ -80,7 +80,7 @@ class Calculator extends Component {
   }
 
 
-  numInput= (e) =>{
+  numbers= (e) =>{
     if(this.state.abovetext.match(/[0-9\.]$/) && !this.state.abovetext.includes("=")){ //eslint-disable-line
       if(this.state.abovetext.match(/[+\-*\/]/) === null){  //eslint-disable-line
         let val = this.state.abovetext + e.currentTarget.value;
@@ -108,7 +108,7 @@ class Calculator extends Component {
     }
   }
 
-  operInput= (e) =>{
+  operators= (e) =>{
     if(this.state.abovetext.includes("=")){
       let val = this.state.belowtext;
       val += e.currentTarget.value;
@@ -133,7 +133,7 @@ class Calculator extends Component {
     }
   }
 
-  decInput= (e) =>{
+  decimal= (e) =>{
     if(this.state.abovetext === "" || this.state.abovetext.includes("=")){
       let val = '0.';
       this.setState({
@@ -155,7 +155,7 @@ class Calculator extends Component {
   }
 
 
-  calculate = () => {
+  equals = () => {
     if(this.state.abovetext.includes("=")){
       let val = `${this.state.belowtext} =`;
       this.setState({
@@ -181,22 +181,22 @@ class Calculator extends Component {
           
           <Button onClick={this.clear} style={style} variant="contained" value='clear' className={`${classes.twospace} ${classes.other}`} >AC</Button>
           <Button onClick={this.delete} style={style} variant="contained" value='bc' className={classes.other} ><BackspaceIcon /></Button>
-          <Button onClick={this.operInput} style={style} variant="contained" value='/' className={classes.operate} >/</Button>
-          <Button onClick={this.numInput} style={style} variant="contained" value='7' >7</Button>
-          <Button onClick={this.numInput} style={style} variant="contained" value='8' >8</Button>
-          <Button onClick={this.numInput} style={style} variant="contained" value='9'>9</Button>
-          <Button onClick={this.operInput} style={style} variant="contained" value='*' className={classes.operate} >*</Button>
-          <Button onClick={this.numInput} style={style} variant="contained" value='4' >4</Button>
-          <Button onClick={this.numInput} style={style} variant="contained" value='5' >5</Button>
-          <Button onClick={this.numInput}style={style} variant="contained" value='6' >6</Button>
-          <Button onClick={this.operInput} style={style} variant="contained" value='-' className={classes.operate} >-</Button>
-          <Button onClick={this.numInput} style={style} variant="contained" value='1' >1</Button>
-          <Button onClick={this.numInput} style={style} variant="contained" value='2' >2</Button>
-          <Button onClick={this.numInput} style={style} variant="contained" value='3' >3</Button>
-          <Button onClick={this.operInput} style={style} variant="contained" value='+' className={classes.operate} >+</Button>
-          <Button onClick={this.numInput} style={style} variant="contained" value='0' >0</Button>
-          <Button onClick={this.decInput} style={style} variant="contained" value='.' >.</Button>
-          <Button onClick={this.calculate} style={style} value='=' className={`${classes.twospace} ${classes.equal}`} variant="contained" >=</Button>
+          <Button onClick={this.operators} style={style} variant="contained" value='/' className={classes.operate} >/</Button>
+          <Button onClick={this.numbers} style={style} variant="contained" value='7' >7</Button>
+          <Button onClick={this.numbers} style={style} variant="contained" value='8' >8</Button>
+          <Button onClick={this.numbers} style={style} variant="contained" value='9'>9</Button>
+          <Button onClick={this.operators} style={style} variant="contained" value='*' className={classes.operate} >*</Button>
+          <Button onClick={this.numbers} style={style} variant="contained" value='4' >4</Button>
+          <Button onClick={this.numbers} style={style} variant="contained" value='5' >5</Button>
+          <Button onClick={this.numbers}style={style} variant="contained" value='6' >6</Button>
+          <Button onClick={this.operators} style={style} variant="contained" value='-' className={classes.operate} >-</Button>
+          <Button onClick={this.numbers} style={style} variant="contained" value='1' >1</Button>
+          <Button onClick={this.numbers} style={style} variant="contained" value='2' >2</Button>
+          <Button onClick={this.numbers} style={style} variant="contained" value='3' >3</Button>
+          <Button onClick={this.operators} style={style} variant="contained" value='+' className={classes.operate} >+</Button>
+          <Button onClick={this.numbers} style={style} variant="contained" value='0' >0</Button>
+          <Button onClick={this.decimal} style={style} variant="contained" value='.' >.</Button>
+          <Button onClick={this.equals} style={style} value='=' className={`${classes.twospace} ${classes.equal}`} variant="contained" >=</Button>
      
         </div>
         );
